@@ -1,73 +1,46 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+> This is a challenge by [Coodesh](https://coodesh.com/)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Teste Novos Devs HubLocal
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Descrição do projeto:
 
-## Description
+Projeto desenvolvido com objetivo de fazer cadastro de empresas e de locais pertencentes a cada empresa. Para isso, se faz necessário estar cadastrado no sistema para poder efetuar login e assim ter acesso as funcionalidades.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Linguagem, Framework e tecnologias usadas:
 
-## Installation
+- Typescript
+- NestJs
+- PostgreSQL
+- pgAdmin4
+- TypeORM
+- JWT
+- Passport
 
-```bash
-$ npm install
-```
+## Como instalar e usar o projeto (instruções):
 
-## Running the app
+1. Deve-se ter o nodejs e npm instalado (versões utilizadas: node - 16.13.2 | npm - 8.1.2)
+2. No pgAdmin deve-se criar a database "coodesh" para posteriormente podermos fazer a conexão com ela, ela deve estar dentro do owner "postgres". O host está definido como localhost, a port é a 5432, username 'postgres', senha definida para o user postgres na hora da criação foi 1234 e como ja dito o nome da base de dados é 'coodesh'
 
-```bash
-# development
-$ npm run start
+Exemplo de script para criação da database:
+CREATE DATABASE coodesh
+WITH
+OWNER = postgres
+ENCODING = 'UTF8'
+CONNECTION LIMIT = -1
+IS_TEMPLATE = False;
 
-# watch mode
-$ npm run start:dev
+3. Fazer o clone do repositório, abrir na IDE (IDE utilizada: vsCode), abrir um terminal e rodar o comando: 'npm i' para instalar dependências^
 
-# production mode
-$ npm run start:prod
-```
+4. Após todas as dependências instaladas, rodar o comando 'npm run start:dev' no terminal para iniciar a aplicação
 
-## Test
+5. Tudo dando certo, pode-se ser realizado os testes no postman/insomnia/etc
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+6. Rotas utilizadas:
+   > Referentes a users
+   > 1 - Create a new user: http://localhost:3005/api/v1/users
+   > Body utilizado:
+   > {
+   > "name": "teste",
+   > "email": "cesar@gmail.com",
+   > "password": "Cesar@1234"
+   > }
