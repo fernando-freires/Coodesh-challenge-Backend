@@ -36,11 +36,99 @@ IS_TEMPLATE = False;
 5. Tudo dando certo, pode-se ser realizado os testes no postman/insomnia/etc
 
 6. Rotas utilizadas:
-   > Referentes a users
-   > 1 - Create a new user: http://localhost:3005/api/v1/users
-   > Body utilizado:
-   > {
-   > "name": "teste",
-   > "email": "cesar@gmail.com",
-   > "password": "Cesar@1234"
-   > }
+   Apenas a rota de create a new user não necessita ter um token nos Headers.Authorization, todas as outras precisam
+
+utiliza a variável {{URL}} = http://localhost:3005 para evitar repetições
+
+### Referentes a users:
+
+1 - Create a new user: {{URL}}/api/v1/users
+Body utilizado:
+{
+"name": "coodesh",
+"email": "coodesh@gmail.com",
+"password": "Coodesh@1234"
+}
+
+2- Login: {{URL}}/api/auth/login
+Agora deve-se copiar o token retornado e utilizar nos headers como especificado
+Body utilizado:
+{
+"email": "coodesh@gmail.com",
+"password": "Coodesh@1234"
+}
+
+3 - Get all users: {{URL}}/api/v1/users
+
+4 - Get one users: {{URL}}/api/v1/users/:idUsuario
+
+5 - Update user: {{URL}}/api/v1/users/:idUsuario
+Body utilizado:
+{
+"name": "Coodesh Novo",
+"email": "coodeshNovo.com"
+}
+
+6 - Delete a user: {{URL}}/api/v1/users/:idUsuario
+
+### Referentes a Empresas:
+
+1 - Create a new company: {{URL}}/api/v1/companies
+Body Utilizado:
+{
+"userId": "userIdRetornadoDeAlgumaRequisicaoAnterior",
+"name": "teste coodesh",
+"website": "https://coodesh.com",
+"cnpj": "07.401.436/0002-12"
+}
+
+2 - Get all companies: {{URL}}/api/v1/companies
+
+3 - Get company by Id: {{URL}}/api/v1/:idEmpresa
+
+4 - Get company by UserId: {{URL}}/api/v1/companies/company/idUsuario
+
+5 - Update a company: {{URL}}/api/v1/companies/:companyId
+Body utilizado:
+{
+"name": "Coodesh atualizado",
+"website": "https://google.com",
+"cnpj": "07.401.436/0302-12"
+}
+
+6 - Delete a company: {{URL}}/api/v1/companies/:companyId
+
+### Referentes a Locais:
+
+1 - Create a new location: {{URL}}/api/v1/locations
+Body utilizado:
+{
+"companyId": "IdEmpresaRetornadoPorOutraRequestAnterior",
+"name": "local coodesh",
+"cep": "69090-000",
+"street": "rua 1",
+"number": "239",
+"neighborhood": "Bairro alto",
+"city": "Manaus",
+"UF": "Amazonas"
+}
+
+2 - Get all locals: {{URL}}/api/v1/locations
+
+3 - Get locals by id: {{URL}}/api/v1/locations/:locationId
+
+4 - Get all locals by companyId: {{URL}}/api/v1/locations/local/:companyId
+
+5 - Update a locals: {{URL}}/api/v1/locations/:localId
+Body utilizado:
+{
+"name": "local da codesh",
+"cep": "69090-020",
+"street": "rua 3",
+"number": "7",
+"neighborhood": "bairro 2",
+"city": "São Paulo",
+"UF": "São Paulo"
+}
+
+6 - Delete a location: {{URL}}/api/v1/locations/:locationId
