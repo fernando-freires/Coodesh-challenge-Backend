@@ -132,3 +132,5 @@ Body utilizado:
 }
 
 6 - Delete a location: {{URL}}/api/v1/locations/:locationId
+
+> Link para a apresentação do projeto [Clique aqui!](https://www.loom.com/share/870fc5fe02b545248ab0be5005dd494c)
